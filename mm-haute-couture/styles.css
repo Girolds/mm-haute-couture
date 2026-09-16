@@ -403,6 +403,13 @@ p {
   transition: var(--transition-smooth);
 }
 
+
+.brand-logo-img {
+  width: 30px; 
+  height: auto;
+  object-fit: contain;
+}
+
 .brand-title {
   display: flex;
   flex-direction: column;
@@ -468,85 +475,10 @@ p {
   font-weight: 500;
 }
 
-/* Menu Dropdown language */
-/* Container de ações do Header (Botão + Idioma) */
-.header-actions {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 15px;
-  margin-left: auto; /* ISSO FAZ A MÁGICA: Empurra o bloco todo para o extremo direito */
-}
-
-/* Container do Idioma */
-.lang-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Botão "Quadradão" padronizado com o tema */
-.lang-btn {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-  padding: 8px 10px;
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
-  color: var(--text-primary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: all var(--transition-fast);
-}
-
-.lang-btn:hover {
-  border-color: var(--gold-primary);
-  color: var(--gold-primary);
-}
-
-/* Menu Flutuante */
-.lang-menu {
-  display: none;
-  position: absolute;
-  top: 130%;
-  right: 0;
-  background-color: var(--bg-primary);
-  min-width: 90px;
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-  box-shadow: var(--shadow-subtle);
-  z-index: 1000;
-  flex-direction: column;
-}
-
-.lang-menu.show {
-  display: flex;
-}
-
-/* Opções de Idioma */
-.lang-option {
-  padding: 10px 16px 10px 13px; 
-  border-left: 3px solid transparent; 
-  text-decoration: none;
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-  display: block; 
-}
-
-.lang-option:hover {
-  background-color: var(--bg-secondary);
-  color: var(--gold-primary); 
-  border-left: 3px solid var(--gold-primary); 
-  font-weight: 600;
-}
 
 /* Mobile Toggle Hamburger */
 .mobile-toggle {
-  display: none; /* Já está correto, invisível por padrão no computador */
+  display: none; 
   flex-direction: column;
   justify-content: space-between;
   width: 26px;
@@ -999,7 +931,12 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+}
+
+.section:has(.services-detail-item) {
+  padding-top: 60px; 
+  padding-bottom: 60px; 
 }
 
 .services-detail-item:nth-child(even) {
