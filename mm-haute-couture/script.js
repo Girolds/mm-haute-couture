@@ -195,32 +195,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
   }
+
+/* --------------------------------------------------------------------------
+   7. INSTAGRAM GALLERY LIKE INTERACTION
+   -------------------------------------------------------------------------- */
+const instaCards = document.querySelectorAll('.instagram-card');
+
+instaCards.forEach(card => {
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.classList.toggle('is-liked');
+  });
 });
+/* =========================================
+   8. HERO CAROUSEL AUTO-SLIDE
+   ========================================= */
+const carouselImages = document.querySelectorAll('#hero-carousel .carousel-img');
+let currentImgIndex = 0;
 
-
-/* ------------------------------------------------------------------------
-   7. LANGUAGE BUTTOM
-   ------------------------------------------------------------------------ */
-document.addEventListener('DOMContentLoaded', function () {
-  const langBtn = document.querySelector('.lang-btn');
-  const langMenu = document.querySelector('.lang-menu');
-
-  if (langBtn && langMenu) {
-    // Alterna a exibição do menu ao clicar no botão
-    langBtn.addEventListener('click', function (event) {
-      event.stopPropagation(); // Evita que o clique feche o menu imediatamente
-      langMenu.classList.toggle('show');
-
-      const isExpanded = langMenu.classList.contains('show');
-      langBtn.setAttribute('aria-expanded', isExpanded);
-    });
-
-    // Fecha o menu se o usuário clicar em qualquer outro lugar da página
-    document.addEventListener('click', function (event) {
-      if (!langBtn.contains(event.target) && !langMenu.contains(event.target)) {
-        langMenu.classList.remove('show');
-        langBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
+if (carouselImages.length > 0) {
+  setInterval(() => {
+    carouselImages[currentImgIndex].classList.remove('active');
+    
+    currentImgIndex = (currentImgIndex + 1) % carouselImages.length;
+    
+    carouselImages[currentImgIndex].classList.add('active');
+    
+  }, 4000);
+}
 });

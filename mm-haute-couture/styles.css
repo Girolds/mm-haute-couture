@@ -581,6 +581,7 @@ p {
   border-left: 2px solid var(--gold-primary);
   box-shadow: var(--shadow-medium);
   border-radius: 2px;
+  z-index: 1000;
 }
 
 .hero-badge-number {
@@ -596,6 +597,29 @@ p {
   letter-spacing: 0.15em;
   color: var(--gold-primary);
   margin-top: 4px;
+}
+
+#hero-carousel {
+  position: relative;
+  aspect-ratio: 44 / 56; 
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; 
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.carousel-img.active {
+  opacity: 1;
+  z-index: 2;
 }
 
 /* --------------------------------------------------------------------------
@@ -1666,8 +1690,9 @@ p {
 
 .instagram-card {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  cursor: pointer; /* Mãozinha indicando que é clicável */
 }
 
 .instagram-card img {
@@ -1688,19 +1713,47 @@ p {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  opacity: 0;
+  opacity: 0; /* Invisível por padrão */
   transition: opacity 0.3s ease;
-  font-size: 1.5rem;
 }
 
+/* 1. Passou o mouse: Mostra a tela escura e dá zoom na foto */
 .instagram-card:hover img {
   transform: scale(1.1);
 }
-
 .instagram-card:hover .instagram-overlay {
   opacity: 1;
 }
 
+/* 2. Regra Nuclear: Se TIRAR o mouse, esconde a tela escura e ponto final. */
+.instagram-card:not(:hover) .instagram-overlay {
+  opacity: 0 !important;
+}
+
+/* =========================================
+   AÇÃO DO CORAÇÃO SVG
+   ========================================= */
+.heart-icon {
+  transition: transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* 3. Se estiver curtido (is-liked): Fica vermelho e dá o pulinho */
+.instagram-card.is-liked .heart-icon,
+.instagram-card.is-liked .heart-icon path {
+  fill: #ed4956 !important;
+  stroke: #ed4956 !important;
+  color: #ed4956 !important;
+}
+
+.instagram-card.is-liked .heart-icon {
+  animation: heartPop 0.3s ease-out;
+}
+
+@keyframes heartPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
 /* Pre-Footer CTA Banner */
 .prefooter-cta-box {
   background: var(--bg-dark);
