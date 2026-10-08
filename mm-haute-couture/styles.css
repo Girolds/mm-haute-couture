@@ -360,7 +360,8 @@ p {
   height: var(--header-height);
   z-index: 1000;
   transition: var(--transition-smooth);
-  background: transparent;
+  background: var(--bg-primary); 
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header.scrolled {
