@@ -78,9 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
           navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
+            const href = link.getAttribute('href');
+            // Apenas remove ou adiciona a classe se o link for uma âncora interna (começa com #)
+            if (href && href.startsWith('#')) {
+              link.classList.remove('active');
+              if (href === `#${id}`) {
+                link.classList.add('active');
+              }
             }
           });
         }
