@@ -534,6 +534,11 @@ p {
   max-width: 580px;
 }
 
+.hero-events {
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
 .hero-headline {
   margin-bottom: 1.5rem;
   position: relative;
@@ -1832,4 +1837,80 @@ p {
   .prefooter-cta-box {
     padding: 50px 24px;
   }
+}
+
+/* =========================================
+   GALERIA ORGÂNICA (BENTO GRID)
+   ========================================= */
+.gallery-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 350px;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.bento-item {
+  width: 100%;
+  height: 100%;
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bento-tall {
+  grid-column: 3;
+  grid-row: span 2;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+.bento-tall-left {
+  grid-column: 1;
+  grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+  .gallery-bento {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+  .bento-tall, .bento-wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+
+.mask-square {
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+}
+
+/* Formato em Folha */
+.mask-leaf {
+  border-radius: 150px 8px 150px 8px;
+  overflow: hidden;
+}
+
+/* Arredondamento suave e clássico (Perfeito para a imagem LARGA) */
+.mask-soft {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Redondo perfeito em todos os cantos (Pílula) */
+.mask-pill {
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.img-adjusted {
+  object-position: center 25%;
+  transform: scale(1.15);
 }

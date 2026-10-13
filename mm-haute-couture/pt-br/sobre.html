@@ -46,41 +46,42 @@
 
 <body>
 
-  <!-- HEADER GLOBAL PT-BR -->
-  <header class="header">
-    <div class="container header-container">
+  <!-- ==========================================================================
+       HEADER & GLOBAL NAVIGATION
+       ========================================================================== -->
+    <header class="header">
+        <div class="container header-container">
 
+            <a href="index.html" class="brand-logo" aria-label="Márcia Morais Haute Couture Home">
+                <img src="../assets/Logo.png" alt="Logo Márcia Morais" class="brand-logo-img" />
 
-      <a href="index.html" class="brand-logo" aria-label="Márcia Morais Haute Couture Início">
-        <img src="../assets/Logo.png" alt="Logo Márcia Morais" class="brand-logo-img" />
-        <div class="brand-title">
-          <span class="brand-name">Márcia Morais</span>
-          <span class="brand-tagline">Haute Couture</span>
+                <div class="brand-title">
+                    <span class="brand-name">Márcia Morais</span>
+                    <span class="brand-tagline">Haute Couture</span>
+                </div>
+            </a>
+
+            <nav aria-label="Navegação Principal">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link active">Sobre Nós</a></li>
+                    <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                    <li><a href="eventos.html" class="nav-link ">Eventos</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <a href="contato.html" class="btn btn-outline-gold header-cta-btn">AGENDE UMA CONSULTA</a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-toggle" aria-label="Alternar menu de navegação" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
-      </a>
-
-
-      <nav aria-label="Navegação Principal">
-        <ul class="nav-menu">
-          <li><a href="../pt-br/index.html" class="nav-link">Início</a></li>
-          <li><a href="../pt-br/sobre.html" class="nav-link active">Sobre Nós</a></li>
-          <li><a href="../pt-br/servicos.html" class="nav-link">Serviços</a></li>
-          <li><a href="../pt-br/contato.html" class="nav-link">Contato</a></li>
-        </ul>
-      </nav>
-
-
-      <a href="../pt-br/contato.html" class="btn btn-outline-gold header-cta-btn">AGENDAR CONSULTA</a>
-
-      <!-- Hamburger Mobile -->
-      <button class="mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </header>
+    </header>
 
 
   <main style="padding-top: var(--header-height);">
