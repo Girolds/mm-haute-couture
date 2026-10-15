@@ -1838,16 +1838,139 @@ p {
     padding: 50px 24px;
   }
 }
+/* ==========================================================================
+   GALERIA EXCLUSIVA DO EVENTO (CARROSSEL CONTINUO & BENTO GRID)
+   ========================================================================== */
 
-/* =========================================
-   GALERIA ORGÂNICA (BENTO GRID)
-   ========================================= */
+.gallery-section-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Cabeçalho Estático (Sem Sticky / Sem Paralaxe) */
+.gallery-title-block {
+  position: relative;
+  padding: 10px 0 20px 0;
+  margin-bottom: 0;
+}
+
+/* Botão Pílula */
+.btn-pill-gold {
+  background: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #111111);
+  border: 1px solid var(--border-color, #eae6df);
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.btn-pill-gold:hover {
+  background: var(--gold-primary, #C89D4B);
+  color: #ffffff;
+  border-color: var(--gold-primary, #C89D4B);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 157, 75, 0.3);
+}
+
+/* Carrossel Edge-to-Edge sem cortes nas bordas */
+.gallery-carousel-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  margin-top: 30px;
+  padding: 10px 0;
+  max-height: 480px;
+  opacity: 1;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease,
+              margin-top 0.4s ease;
+
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.gallery-carousel-wrapper.is-hidden {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+/* Trilho com aceleração de GPU (RODA SEM PARAR AO PASSAR O MOUSE) */
+.gallery-carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  animation: scrollInfinite 35s linear infinite;
+}
+
+.carousel-thumb {
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  backface-visibility: hidden;
+}
+
+.carousel-thumb:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes scrollInfinite {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Galeria Expandida Bento Grid */
+.gallery-expandable {
+  transition: opacity 0.3s ease;
+}
+
+.gallery-expandable.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 0;
+}
+
+.gallery-expandable.is-expanded {
+  max-height: 5000px;
+  opacity: 1;
+  overflow: visible;
+  pointer-events: auto;
+  margin-top: 40px;
+}
+
 .gallery-bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 350px;
   gap: 30px;
-  margin-top: 60px;
 }
 
 .bento-item {
@@ -1875,49 +1998,13 @@ p {
   grid-row: span 2;
 }
 
-/* Foto ALTA no centro da grelha */
 .bento-tall-mid {
   grid-column: 2;
   grid-row: span 2;
 }
 
-@media (max-width: 768px) {
-  .gallery-bento {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 300px;
-  }
-  .bento-tall, .bento-wide {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .bento-tall-mid {
-    grid-column: auto;
-    grid-row: auto;
-  }
-}
-
-
 .mask-square {
-  border-radius: 8px 8px 8px 8px;
-  overflow: hidden;
-}
-
-/* Formato em Folha */
-.mask-leaf {
-  border-radius: 150px 8px 150px 8px;
-  overflow: hidden;
-}
-
-/* Arredondamento suave e clássico (Perfeito para a imagem LARGA) */
-.mask-soft {
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Redondo perfeito em todos os cantos (Pílula) */
-.mask-pill {
-  border-radius: 100px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -1926,154 +2013,13 @@ p {
   transform: scale(1.15);
 }
 
-
-/* =========================================
-   EFEITO STICKY SCROLL DA GALERIA
-   ========================================= */
-.sticky-gallery-wrapper {
-  position: relative;
-  display: block;
-}
-
-.sticky-title {
-  
-  position: -webkit-sticky;
-  position: sticky;
-  top: 80px; 
-  z-index: 10;
-  
-  background-color: var(--bg-silk, #f6eee3); 
-  
-  padding: 30px 0 20px 0;
-  margin-bottom: 0px;
-}
-
 @media (max-width: 768px) {
-  .sticky-title {
-    position: relative;
-    top: auto;
-    background-color: transparent;
-    padding: 0;
+  .gallery-bento {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
   }
-}
-
-/* =========================================
-   GALERIA EXPANDÍVEL 
-   ========================================= */
-
-/* Grelha Bento Expandível */
-.gallery-expandable {
-  display: none; /* Escondido por padrão sem afetar o layout */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.gallery-expandable.is-expanded {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  margin-top: 30px;
-}
-
-.gallery-cta-wrapper {
-  text-align: center;
-  margin-top: 50px;
-  position: relative;
-  z-index: 15;
-}
-
-.btn-load-gallery {
-  display: inline-block;
-  padding: 16px 36px;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.gallery-cta-wrapper.is-hidden {
-  display: none;
-}
-
-/* =========================================
-   CARROSSEL DE MINIATURAS E BOTÃO PÍLULA
-   ========================================= */
-
-/* Botão Pílula arredondado estilo referência */
-.btn-pill-gold {
-  background: var(--bg-primary, #ffffff);
-  color: var(--text-primary, #111111);
-  border: 1px solid var(--border-color, #eae6df);
-  padding: 10px 28px;
-  border-radius: 30px;
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.btn-pill-gold:hover {
-  background: var(--gold-primary, #C89D4B);
-  color: #ffffff;
-  border-color: var(--gold-primary, #C89D4B);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(200, 157, 75, 0.3);
-}
-
-/* Contentor do Carrossel Continuo */
-.gallery-carousel-wrapper {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 40px;
-  padding: 10px 0;
-  transition: opacity 0.5s ease, max-height 0.6s ease;
-  max-height: 300px;
-}
-
-.gallery-carousel-wrapper.is-hidden {
-  opacity: 0;
-  max-height: 0;
-  margin-top: 0;
-  pointer-events: none;
-}
-
-.gallery-carousel-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: scrollInfinite 25s linear infinite;
-}
-
-.carousel-thumb {
-  width: 280px;
-  height: 280px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.carousel-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.carousel-thumb:hover img {
-  transform: scale(1.05);
-}
-
-/* Animação do carrossel para mover suavemente */
-@keyframes scrollInfinite {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+  .bento-tall, .bento-wide, .bento-tall-mid, .bento-tall-left {
+    grid-column: auto;
+    grid-row: auto;
   }
 }

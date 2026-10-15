@@ -229,96 +229,82 @@ if (carouselImages.length > 0) {
 }
 });
 
-/* ------------------------------------------------------------------------
-     9. GALERIA EXPANDÍVEL & CARROSSEL PREVIEW (SISTEMA DE TOGGLE FLUIDO)
-     ------------------------------------------------------------------------ */
+
+/* ==========================================================================
+   TOGGLE DA GALERIA EXPANDÍVEL (SUPORTE PT / EN)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
   const expandBtn = document.getElementById('btn-expand-gallery');
   const collapseBtn = document.getElementById('btn-collapse-gallery');
   const expandableGallery = document.getElementById('gallery-more');
   const carouselPreview = document.getElementById('gallery-preview-carousel');
 
-  // ABRIR GALERIA DETALHADA
-  if (expandBtn && expandableGallery) {
-    expandBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+  // 1. Deteção automática do idioma lendo o <html lang="...">
+  const currentLang = document.documentElement.lang || 'pt-BR';
+  const isEnglish = currentLang.toLowerCase().includes('en');
 
-      // 1. Oculta o carrossel inicial
-      if (carouselPreview) {
-        carouselPreview.classList.add('is-hidden');
-      }
+  // 2. Definição dos textos com base no idioma
+  const textView = isEnglish ? 'View in detail' : 'Ver Detalhes';
+  const textClose = isEnglish ? 'Close details' : 'Ocultar Detalhes';
 
-      // 2. Revela a grelha Bento com animação leve
+  const toggleGallery = (expand) => {
+    if (!expandableGallery) return;
+
+    if (expand) {
+      // Oculta o carrossel e expande a Bento Grid
+      if (carouselPreview) carouselPreview.classList.add('is-hidden');
+      expandableGallery.classList.remove('is-collapsed');
       expandableGallery.classList.add('is-expanded');
-      expandBtn.style.display = 'none';
 
-      // 3. Força a ativação do scroll reveal nas fotos internas
-      requestAnimationFrame(() => {
-        const hiddenReveals = expandableGallery.querySelectorAll('.reveal-on-scroll');
-        hiddenReveals.forEach(el => el.classList.add('reveal-active'));
-      });
-    });
-  }
-// FECHAR GALERIA DETALHADA (BOTAO RECOLHER INSTANTÂNEO)
-  if (collapseBtn && expandableGallery) {
-    collapseBtn.addEventListener('click', (e) => {
-      e.preventDefault();
+      // Altera o texto do botão superior
+      if (expandBtn) expandBtn.textContent = textClose;
 
-      // 1. Rola imediatamente a tela para o início da galeria para evitar atrasos na animação de scroll longo
-      const galleryWrapper = document.querySelector('.sticky-gallery-wrapper');
-      if (galleryWrapper) {
-        const headerOffset = 90;
-        const elementPosition = galleryWrapper.getBoundingClientRect().top;
+      // Ativa as imagens
+      const hiddenReveals = expandableGallery.querySelectorAll('.reveal-on-scroll');
+      hiddenReveals.forEach(el => el.classList.add('reveal-active'));
+
+    } else {
+      // Localiza o bloco do título da galeria
+      const galleryTitle = document.querySelector('.gallery-title-block');
+
+      if (galleryTitle) {
+        // Posição exata do título
+        const headerOffset = 100;
+        const elementPosition = galleryTitle.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+        // Rola INSTANTANEAMENTE para o título
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'instant' // Mudado para 'instant' para não congelar enquanto rola a galeria longa
+          behavior: 'instant'
         });
       }
 
-      // 2. Oculta a grelha Bento e reapresenta o carrossel imediatamente após o ajuste do scroll
+      // Recolhe a Bento Grid, devolve o carrossel e restaura o texto do botão
       requestAnimationFrame(() => {
         expandableGallery.classList.remove('is-expanded');
+        expandableGallery.classList.add('is-collapsed');
 
-        if (carouselPreview) {
-          carouselPreview.classList.remove('is-hidden');
-        }
-        if (expandBtn) {
-          expandBtn.style.display = 'inline-block';
-        }
+        if (carouselPreview) carouselPreview.classList.remove('is-hidden');
+        
+        // Restaura o texto original do botão superior
+        if (expandBtn) expandBtn.textContent = textView;
       });
-    });
-  }
+    }
+  };
 
-  // ABRIR GALERIA DETALHADA
-  if (expandBtn && expandableGallery) {
+  if (expandBtn) {
     expandBtn.addEventListener('click', (e) => {
       e.preventDefault();
-
-      // 1. Pré-carrega todas as imagens da galeria de forma forçada na memória
-      const galleryImages = expandableGallery.querySelectorAll('img');
-      galleryImages.forEach(img => {
-        if (img.dataset.src) {
-          img.src = img.dataset.src;
-        }
-        // Força o navegador a carregar a imagem na memória imediatamente
-        const tempImg = new Image();
-        tempImg.src = img.src;
-      });
-
-      // 2. Oculta o carrossel inicial
-      if (carouselPreview) {
-        carouselPreview.classList.add('is-hidden');
-      }
-
-      // 3. Revela a grelha Bento
-      expandableGallery.classList.add('is-expanded');
-      expandBtn.style.display = 'none';
-
-      // 4. Ativa o aparecimento fluido das fotos
-      requestAnimationFrame(() => {
-        const hiddenReveals = expandableGallery.querySelectorAll('.reveal-on-scroll');
-        hiddenReveals.forEach(el => el.classList.add('reveal-active'));
-      });
+      const isCurrentlyExpanded = expandableGallery.classList.contains('is-expanded');
+      toggleGallery(!isCurrentlyExpanded);
     });
   }
+
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleGallery(false);
+    });
+  }
+});
