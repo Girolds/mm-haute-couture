@@ -87,31 +87,32 @@
         </div>
     </header>
 
-    <main>
-        <!-- 1. HERO SECTION B2B -->
-        <!-- Utiliza a estrutura de section padrao adaptada para o cabeçalho B2B em vez da hero-section que força 100vh de altura -->
-        <section class="section section-bg-silk text-center" style="padding-top: 140px; padding-bottom: 80px;">
-            <div class="container">
+    <main style="padding-top: var(--header-height);">
+
+        <!-- 1. HERO SECTION B2B (PADRONIZADA COM AS DEMAIS PÁGINAS) -->
+        <section class="section section-bg-silk" style="padding-top: 80px; padding-bottom: 60px;">
+            <div class="container text-center" style="max-width: 800px;">
                 <span class="tagline">B2B Collaborations</span>
                 <h1>Partner with MM Haute Couture</h1>
-                <div class="divider-gold"></div>
-                <p class="subtitle-lead hero-subtitle">
+                <p class="subtitle-lead hero-subtitle" style="margin-top: 20px;">
                     Elevating the standard of bridal and formal wear in Queensland. We provide exclusive Service Level
-                    Agreements (SLAs) and priority alterations for industry professionals.
+                    Agreements and priority alterations for industry professionals.
                 </p>
+                <div class="divider-gold"></div>
             </div>
         </section>
 
         <!-- 2. WHO WE WORK WITH -->
         <section class="section">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center" style="max-width: 680px; margin: 0 auto 50px auto;">
+                    <span class="tagline">Industry Synergies</span>
                     <h2>Who We Collaborate With</h2>
                     <p class="subtitle-lead">Our partnerships are designed to add value to your business, ensuring your
                         clients receive flawless fittings and priority handling.</p>
+                    <div class="divider-gold"></div>
                 </div>
 
-                <!-- Usando a sua grelha de serviços existente -->
                 <div class="services-grid">
 
                     <!-- Bridal & Formal Boutiques -->
@@ -125,7 +126,7 @@
                     <!-- Event Planners & Cerimonialists -->
                     <div class="service-card text-center">
                         <div class="service-icon">✦</div>
-                        <h3>Event Planners & Cerimonialists</h3>
+                        <h3>Event Planners & Stylists</h3>
                         <p>Reliable tailoring support for weddings, galas, and high-profile events. We ensure the bridal
                             party and VIP guests look immaculate on the big day.</p>
                     </div>
@@ -150,74 +151,72 @@
             </div>
         </section>
 
-        <!-- 3. FORMULÁRIO DE CAPTAÇÃO B2B (Estilo idêntico ao Contact) -->
+        <!-- 3. FORMULÁRIO DE CAPTAÇÃO B2B (PADRONIZADO COM O DESIGN DO CONTACT.HTML) -->
         <section class="section section-bg-silk">
             <div class="container">
 
-                <!-- Usando a contact-grid que tem as proporções exatas de contacto -->
                 <div class="contact-grid">
 
-                    <!-- Coluna da Esquerda: Texto Comercial -->
+                    <!-- Coluna da Esquerda: Benefícios B2B -->
                     <div>
-            <span class="tagline text-gold">Join Our Network</span>
-            <h2>Become a Partner</h2>
-            <div class="divider-gold left"></div>
-            <p class="subtitle-lead" style="margin-bottom: 30px;">
-              Whether you are a boutique looking for a trusted alterations partner, or an event organiser planning a luxury wedding, we are ready to elevate your service offering.
-            </p>
-            
-            <ul class="contact-info-list">
-              <!-- Vantagem 1 -->
-              <li class="contact-info-item">
-                <div class="contact-info-icon">
-                  <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
-                </div>
-                <div>
-                  <div class="contact-info-title">Retail Partners</div>
-                  <div class="contact-info-text" style="font-size: 1.1rem;">Exclusive pricing and SLA terms</div>
-                </div>
-              </li>
+                        <span class="tagline">Join Our Network</span>
+                        <h2>Become a Partner</h2>
+                        <p class="subtitle-lead">
+                            Whether you are a boutique looking for a trusted alterations partner or an event organiser planning a luxury wedding, we are ready to elevate your service offering.
+                        </p>
+                        <div class="divider-gold left"></div>
+                        
+                        <ul class="contact-info-list" style="margin-top: 30px;">
+                            <!-- Vantagem 1 -->
+                            <li class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title">Retail Partners</div>
+                                    <div class="contact-info-text" style="font-size: 1.1rem;">Exclusive pricing & SLA terms</div>
+                                </div>
+                            </li>
 
-              <!-- Vantagem 2 -->
-              <li class="contact-info-item">
-                <div class="contact-info-icon">
-                  <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
-                </div>
-                <div>
-                  <div class="contact-info-title">Peak Season</div>
-                  <div class="contact-info-text" style="font-size: 1.1rem;">Priority scheduling during bridal peak</div>
-                </div>
-              </li>
+                            <!-- Vantagem 2 -->
+                            <li class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title">Peak Season</div>
+                                    <div class="contact-info-text" style="font-size: 1.1rem;">Priority scheduling during bridal peak</div>
+                                </div>
+                            </li>
 
-              <!-- Vantagem 3 -->
-              <li class="contact-info-item">
-                <div class="contact-info-icon">
-                  <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
-                </div>
-                <div>
-                  <div class="contact-info-title">Master Tailor</div>
-                  <div class="contact-info-text" style="font-size: 1.1rem;">Direct line of communication</div>
-                </div>
-              </li>
+                            <!-- Vantagem 3 -->
+                            <li class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title">Master Tailor Access</div>
+                                    <div class="contact-info-text" style="font-size: 1.1rem;">Direct technical communication</div>
+                                </div>
+                            </li>
 
-              <!-- Vantagem 4 -->
-              <li class="contact-info-item">
-                <div class="contact-info-icon">
-                  <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
-                </div>
-                <div>
-                  <div class="contact-info-title">Brand Exposure</div>
-                  <div class="contact-info-text" style="font-size: 1.1rem;">Cross-promotion on our platforms</div>
-                </div>
-              </li>
-            </ul>
-          </div>
+                            <!-- Vantagem 4 -->
+                            <li class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <span style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold-primary);">✦</span>
+                                </div>
+                                <div>
+                                    <div class="contact-info-title">Brand Exposure</div>
+                                    <div class="contact-info-text" style="font-size: 1.1rem;">Cross-promotion across platforms</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <!-- Coluna da Direita: O Formulário Específico -->
+                    <!-- Coluna da Direita: Formulário B2B -->
                     <div>
                         <form id="partner-form" class="contact-form">
-                            <h3>Partnership Inquiry</h3>
-                            <div class="divider-gold left"></div>
+                            <h3 style="margin-bottom: 24px; font-size: 1.8rem;">Partnership Inquiry</h3>
 
                             <div class="form-group">
                                 <label for="company-name" class="form-label">Company / Boutique Name *</label>
@@ -263,7 +262,7 @@
                                     placeholder="Tell us about your business and how we can work together..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Inquiry</button>
+                            <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Partnership Request</button>
                         </form>
                     </div>
 
@@ -275,18 +274,15 @@
     <!-- FEEDBACK MODAL (B2B VERSION) -->
     <div id="feedback-modal-b2b" class="form-feedback-modal" aria-hidden="true">
         <div class="feedback-card">
-            <div class="brand-monogram" style="margin: 0 auto 20px auto;">MM</div>
+            <div class="brand-monogram" style="margin: 0 auto 20px auto; width: 50px; height: 50px; font-size: 1.5rem;">MM</div>
             <h2>Thank You</h2>
             <div class="divider-gold"></div>
-            <p>Your partnership inquiry has been received. Our executive team will review your details and contact you
-                shortly to discuss collaboration opportunities.</p>
-            <button id="close-modal-btn-b2b" class="btn btn-outline-gold">Close Window</button>
+            <p>Your partnership inquiry has been received with high priority. Márcia Morais Atelier will contact you shortly to discuss collaboration opportunities.</p>
+            <button id="close-modal-btn-b2b" class="btn btn-outline-gold" style="margin-top: 20px;">Close Window</button>
         </div>
     </div>
 
-    <!-- ==========================================================================
-       FLOATING WHATSAPP BUTTON
-       ========================================================================== -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/61401185923?text=Hello%20M%C3%A1rcia%20Morais%20Atelier,%20I%20would%20like%20to%20discuss%20a%20B2B%20partnership"
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
         <svg class="whatsapp-icon" viewBox="0 0 24 24">
@@ -298,7 +294,7 @@
     <!-- ==========================================================================
        GLOBAL FOOTER
        ========================================================================== -->
-    <footer class="footer">
+    <footer class="footer" style="margin-top: 80px;">
         <div class="container">
             <div class="footer-grid">
                 <!-- Brand Info -->
@@ -313,8 +309,7 @@
                     </div>
                     <p>
                         Bespoke bridal alterations, evening wear, and executive tailoring in Brisbane, Queensland.
-                        Confidence is
-                        something you wear.
+                        Confidence is something you wear.
                     </p>
                 </div>
 
@@ -362,6 +357,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -87,17 +87,17 @@
         </div>
     </header>
 
-    <main>
+    <main style="padding-top: var(--header-height);">
         <!-- 1. HERO SECTION -->
-        <section class="section section-bg-silk text-center hero-events reveal-on-scroll">
-            <div class="container">
+        <section class="section section-bg-silk" style="padding-top: 80px; padding-bottom: 60px;">
+            <div class="container text-center" style="max-width: 800px;">
                 <span class="tagline">Passarela e Reconhecimento</span>
                 <h1>Eventos e Projetos Especiais</h1>
-                <div class="divider-gold"></div>
-                <p class="subtitle-lead hero-subtitle">
+                <p class="subtitle-lead hero-subtitle" style="margin-top: 20px;">
                     Celebrando a alta costura artesanal através de galas culturais, desfiles de moda e colaborações de
                     grande prestígio em Queensland.
                 </p>
+                <div class="divider-gold"></div>
             </div>
         </section>
 
@@ -113,27 +113,31 @@
                 <div class="tiers-grid mt-80">
 
                     <!-- Card 1: Brazil Week (Leva para a secção detalhada) -->
-                    <a href="#queensland-brazil-week" style="text-decoration: none; color: inherit; display: block;" class="reveal-on-scroll">
+                    <a href="#queensland-brazil-week" style="text-decoration: none; color: inherit; display: block;"
+                        class="reveal-on-scroll">
                         <div class="service-teaser-card">
                             <div class="service-teaser-img-wrapper">
                                 <img src="../assets/brazilweek/eventos-1.jpg"
                                     alt="Celebração da Queensland Brazil Week" />
                             </div>
                             <div class="service-teaser-body">
-                                <span class="tagline text-gold">Reconhecimento Oficial</span>
+                                <span class="tagline text-gold">Setembro 2026 | Brisbane</span>
                                 <h3>Queensland Brazil Week</h3>
                                 <p>
-                                    Márcia Morais foi homenageada oficialmente, apresentando o luxo e a alfaiataria
-                                    técnica brasileira para a comunidade australiana.
+                                    Em sua 5ª edição, o evento celebrou a cultura brasileira na Austrália. A marca
+                                    marcou presença levando a sofisticação, a precisão técnica e a exclusividade da alta
+                                    costura a Brisbane.
                                 </p>
-                                <span class="link-arrow" style="margin-top: auto; align-self: flex-start;">Ver
-                                    Cobertura</span>
+                                <span class="link-arrow" style="margin-top: auto; align-self: flex-start;">
+                                    Ver Cobertura
+                                </span>
                             </div>
                         </div>
                     </a>
 
                     <!-- Card 2: Gala (Pode ser linkado futuramente) -->
-                    <a href="#desfiles-gala" style="text-decoration: none; color: inherit; display: block;" class="reveal-on-scroll">
+                    <a href="#desfiles-gala" style="text-decoration: none; color: inherit; display: block;"
+                        class="reveal-on-scroll">
                         <div class="service-teaser-card">
                             <div class="service-teaser-img-wrapper">
                                 <img src="../assets/Noiva.jpg" alt="Desfile de Noivas e Moda Festa" />
@@ -152,7 +156,8 @@
                     </a>
 
                     <!-- Card 3: Editoriais (Pode ser linkado futuramente) -->
-                    <a href="#editoriais" style="text-decoration: none; color: inherit; display: block;" class="reveal-on-scroll">
+                    <a href="#editoriais" style="text-decoration: none; color: inherit; display: block;"
+                        class="reveal-on-scroll">
                         <div class="service-teaser-card">
                             <div class="service-teaser-img-wrapper">
                                 <img src="../assets/Roupa-4.png" alt="Editoriais de Moda" />
@@ -200,8 +205,17 @@
                             essência da Márcia Morais Haute Couture: elegância, exclusividade e excelência em cada
                             detalhe.
                         </p>
+
+                        <div style="margin-top: 25px;">
+                            <a href="https://brazilweek.au" target="_blank" rel="noopener noreferrer"
+                                class="link-arrow text-gold" style="font-weight: 500;">
+                                Visite o Site Oficial Brazil Week
+                            </a>
+                        </div>
+
                     </div>
-                    <div class="before-after-box reveal-on-scroll" style="border-radius: 300px 300px 8px 8px / 300px 300px 4px 4px;">
+                    <div class="before-after-box reveal-on-scroll"
+                        style="border-radius: 300px 300px 8px 8px / 300px 300px 4px 4px;">
                         <!-- Foto Principal do Evento -->
                         <img src="../assets/brazilweek/eventos-9.jpg"
                             alt="Márcia Morais na 5ª edição da Queensland Brazil Week"
@@ -210,151 +224,150 @@
                 </div>
 
 
-                <!-- Galeria Exclusiva do Evento (Com Efeito Sticky Parallax) -->
+                <!-- Galeria Exclusiva do Evento -->
                 <div class="sticky-gallery-wrapper" style="margin-top: 100px;">
-                    
-                    <!-- Título Parallax (Fica preso no ecrã) -->
+
                     <div class="text-center reveal-on-scroll sticky-title">
                         <h3>Galeria Exclusiva do Evento</h3>
                         <div class="divider-gold"></div>
+
+                        <div style="margin-top: 20px;">
+                            <button type="button" class="btn-pill-gold" id="btn-expand-gallery">
+                                Ver Detalhes
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Grelha Orgânica (As fotos deslizam por trás do título) -->
-                    <div class="gallery-bento">
-
-                        <!-- ================= BLOCO 1 ================= -->
-
-                        <!-- Foto 1 -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-3.jpg" alt="Bastidores do Evento" />
+                    <!-- ================= 1. CARROSSEL DE MINIATURAS ================= -->
+                    <div class="gallery-carousel-wrapper" id="gallery-preview-carousel">
+                        <div class="gallery-carousel-track">
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-3.jpg" alt="Foto 1" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-4.jpg" alt="Foto 2" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-5.jpg" alt="Foto 3" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-6.jpg" alt="Foto 4" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-1.jpg" alt="Foto 5" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-8.jpg" alt="Foto 6" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-10.jpg" alt="Foto 7" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-12.jpg" alt="Foto 8" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-3.jpg" alt="Foto 1" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-4.jpg" alt="Foto 2" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-5.jpg" alt="Foto 3" />
+                            </div>
+                            <div class="carousel-thumb"><img src="../assets/brazilweek/eventos-6.jpg" alt="Foto 4" />
+                            </div>
                         </div>
-
-                        <!-- Foto 2 -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-4.jpg" alt="Apresentação de Peça" />
-                        </div>
-
-                        <!-- Video (Alta na Direita): -->
-                        <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
-                            <video autoplay muted loop playsinline
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                                <source src="../assets/brazilweek/desfile.mp4" type="video/mp4" />
-                                Seu navegador não suporta a reprodução de vídeos.
-                            </video>
-                        </div>
-
-                        <!-- Foto 3: LARGA na base da esquerda -->
-                        <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-1.jpg" alt="Detalhe de Costura e Recepção" />
-                        </div>
-
-
-                        <!-- ================= BLOCO 2 ================= -->
-
-                        <!-- Foto 4: ALTA na Esquerda -->
-                        <div class="before-after-box bento-item bento-tall-left mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-5.jpg" alt="Foto Alta na Esquerda" />
-                        </div>
-
-                        <!-- Foto 5: Normal Topo -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-6.jpg" alt="Foto Normal" />
-                        </div>
-
-                        <!-- Foto 6: Normal Topo -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-7.jpg" alt="Foto Normal" />
-                        </div>
-
-                        <!-- Foto 7: LARGA na Base da direita -->
-                        <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-2.jpg" alt="Foto Larga na Base" />
-                        </div>
-
-
-                        <!-- ================= BLOCO 3 ================= -->
-                        
-                        <!-- Foto 8: Normal (Esquerda Topo) -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-8.jpg" alt="Detalhes Alta Costura" />
-                        </div>
-
-                        <!-- Foto 9: ALTA NO MEIO -->
-                        <div class="before-after-box bento-item bento-tall-mid mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-15.jpg" alt="Foto Alta no Centro" />
-                        </div>
-
-                        <!-- Foto 10: Normal (Direita Topo) -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-10.jpg" alt="Foto Normal" />
-                        </div>
-
-                        <!-- Foto 11: Normal (Esquerda Base) -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-11.jpg" alt="Foto Normal" />
-                        </div>
-
-                        <!-- Foto 12: Normal (Direita Base) -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-12.jpg" alt="Foto Normal" />
-                        </div>
-
-
-                        <!-- ================= BLOCO 4 ================= -->
-                        
-                        <!-- Foto 13: LARGA no Topo da Esquerda -->
-                        <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-19.JPEG" alt="Foto Larga Topo" />
-                        </div>
-
-                        <!-- Foto 14: ALTA na Direita -->
-                        <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-14.jpg" alt="Foto Alta Direita" />
-                        </div>
-
-                        <!-- Foto 15: Normal -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-13.jpg" alt="Foto Normal" />
-                        </div>
-
-                        <!-- Foto 16: Normal -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-16.jpg" alt="Foto Normal" />
-                        </div>
-
-
-                        <!-- ================= BLOCO 5 ================= -->
-                        
-                        <!-- 1. ALTA na Esquerda -->
-                        <div class="before-after-box bento-item bento-tall-left mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-17.jpg" alt="Foto Alta Esquerda" />
-                        </div>
-
-                        <!-- 2. Normal -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-20.jpg" alt="Foto Normal Meio Topo" />
-                        </div>
-
-                        <!-- 3. ALTA na Direita -->
-                        <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-18.jpg" alt="Foto Alta Direita" />
-                        </div>
-
-                        <!-- 4. Normal -->
-                        <div class="before-after-box bento-item mask-square reveal-on-scroll">
-                            <img src="../assets/brazilweek/eventos-21.jpg" alt="Foto Normal Meio Base" />
-                        </div>
-
                     </div>
+
+                    <!-- ================= 2. GRELHA BENTO COMPLETA  ================= -->
+                    <div class="gallery-expandable" id="gallery-more">
+                        <div class="gallery-bento">
+
+                            <!-- BLOCO 1 -->
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-3.jpg" alt="Foto 1" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-4.jpg" alt="Foto 2" />
+                            </div>
+                            <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
+                                <video autoplay muted loop playsinline
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="../assets/brazilweek/desfile.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-1.jpg" alt="Foto 3" />
+                            </div>
+
+                            <!-- BLOCO 2 -->
+                            <div class="before-after-box bento-item bento-tall-left mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-5.jpg" alt="Foto 4" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-6.jpg" alt="Foto 5" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-7.jpg" alt="Foto 6" />
+                            </div>
+                            <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-2.jpg" alt="Foto 7" />
+                            </div>
+
+                            <!-- BLOCO 3 -->
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-8.jpg" alt="Foto 8" />
+                            </div>
+                            <div class="before-after-box bento-item bento-tall-mid mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-15.jpg" alt="Foto 9" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-10.jpg" alt="Foto 10" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-11.jpg" alt="Foto 11" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-12.jpg" alt="Foto 12" />
+                            </div>
+
+                            <!-- BLOCO 4 -->
+                            <div class="before-after-box bento-item bento-wide mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-19.JPEG" alt="Foto 13" />
+                            </div>
+                            <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-14.jpg" alt="Foto 14" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-13.jpg" alt="Foto 15" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-16.jpg" alt="Foto 16" />
+                            </div>
+
+                            <!-- BLOCO 5 -->
+                            <div class="before-after-box bento-item bento-tall-left mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-17.jpg" alt="Foto 17" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-20.jpg" alt="Foto 18" />
+                            </div>
+                            <div class="before-after-box bento-item bento-tall mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-18.jpg" alt="Foto 19" />
+                            </div>
+                            <div class="before-after-box bento-item mask-square reveal-on-scroll">
+                                <img src="../assets/brazilweek/eventos-21.jpg" alt="Foto 20" />
+                            </div>
+
+                        </div>
+
+                        <!-- Botão para Recolher/Fechar a Galeria -->
+                        <div class="gallery-cta-wrapper" style="margin-top: 50px; text-align: center;">
+                            <button type="button" class="btn-pill-gold" id="btn-collapse-gallery">
+                                Ocultar Detalhes
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+
+            </div>
         </section>
 
-        <!-- (Seções futuras para Gala e Editoriais podem ser adicionadas aqui) -->
 
         <!-- 4. PRE-FOOTER CTA FOR COLLABORATIONS -->
         <section class="section text-center reveal-on-scroll">
             <div class="container">
-                <!-- O bloco ganha destaque visual invertendo as cores -->
                 <div style="background: var(--bg-dark); padding: 80px 40px; border: 1px solid var(--border-gold);">
                     <span class="tagline text-gold">Colaboração para Eventos</span>
                     <h2 style="color: #FFFFFF; font-size: 2.2rem; margin-bottom: 20px;">Planejando um Desfile, Gala ou
